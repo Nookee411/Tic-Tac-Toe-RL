@@ -1,0 +1,8 @@
+engine\player\Player.class
+engine\core\Point.class
+engine\field\TicTacToeFieldCell.class
+engine\core\CellSigns.class
+engine\core\TTTGameMechanics.class
+view\Visual.class
+engine\core\Counter.class
+engine\field\TicTacToeField.class
