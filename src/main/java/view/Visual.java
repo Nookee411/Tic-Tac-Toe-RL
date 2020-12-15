@@ -1,6 +1,7 @@
 package view;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,7 +13,8 @@ import java.net.URL;
 
 public class Visual extends Application {
 
-    @Override
+
+    @Override @FXML
     public void start(Stage stage) throws Exception {
         File file = new File("D:/Учеба/3 курс/1 семестр/Курсовой проект/Application/src/main/resources/fxml/GameVisuals.fxml");
         URL url = file.toURI().toURL();
