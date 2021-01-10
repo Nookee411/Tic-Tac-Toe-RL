@@ -7,6 +7,9 @@ public class TicTacToeField {
     private final int size;
     private TicTacToeFieldCell[][] gameField;
 
+    public TicTacToeFieldCell[][] getGameField() {
+        return gameField;
+    }
     public TicTacToeField(int size) {
         this.size = size;
         gameField = new TicTacToeFieldCell[size][size];
@@ -44,20 +47,20 @@ public class TicTacToeField {
                 if(firstSign !=currentSign)
                     break;
             }
-            if(j == size-1)
+            if(j == size)
                 return firstSign;
         }
 
         //Check vertical lines
         for (int j = 0; j < size; j++) {
-            var firstSign = gameField[j][0].getCurrentSign();
+            var firstSign = gameField[0][j].getCurrentSign();
             int i;
             for (i = 1; i < size; i++) {
                 var currentSign = gameField[i][j].getCurrentSign();
                 if(firstSign !=currentSign)
                     break;
             }
-            if(i == size-1)
+            if(i == size)
                 return firstSign;
         }
 
@@ -69,7 +72,7 @@ public class TicTacToeField {
             if(mainDiagonalSign != gameField[i][i].getCurrentSign())
                 break;
         }
-        if(i == size-1)
+        if(i == size)
             return mainDiagonalSign;
 
         var secondaryDiagonalSign = gameField[0][size-1].getCurrentSign();
@@ -77,10 +80,20 @@ public class TicTacToeField {
             if(secondaryDiagonalSign!= gameField[i][size-1-i].getCurrentSign())
                 break;
         }
-        if(i==size-1)
+        if(i==size)
             return secondaryDiagonalSign;
 
         //No winner
         return CellSigns.EMPTY;
+    }
+
+    public boolean isDraw(){
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if(gameField[i][j].getCurrentSign()==CellSigns.EMPTY)
+                    return false;
+            }
+        }
+        return true;
     }
 }

@@ -42,4 +42,35 @@ public class TTTGameMechanics {
     public int getTurnCounter(){
         return turnCounter.getCounterValue();
     }
+
+    public void newGame(){
+        gameField = new TicTacToeField(3);
+        turnCounter = new Counter();
+        currentPlayerSign = (rand.nextDouble()>=0.5)? CellSigns.CROSS : CellSigns.ZERO;
+    }
+
+    public Integer[][] getField(){
+        var field = gameField.getGameField();
+        Integer[][] newField = new Integer[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                switch (field[i][j].getCurrentSign()){
+                    case CROSS:
+                        newField[i][j] = 1;
+                        break;
+                    case ZERO:
+                        newField[i][j] = -1;
+                        break;
+                    case EMPTY:
+                        newField[i][j] = 0;
+                        break;
+                }
+            }
+        }
+        return newField;
+    }
+
+    public boolean isFieldFull() {
+        return gameField.isDraw();
+    }
 }

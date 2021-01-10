@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FieldController">
    <center>
-      <GridPane fx:id="grid" hgap="3.0" prefHeight="295.0" prefWidth="267.0" vgap="3.0" BorderPane.alignment="CENTER">
+      <GridPane fx:id="field" hgap="3.0" onMousePressed="#onMousePressed" prefHeight="295.0" prefWidth="267.0" vgap="3.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -40,8 +40,10 @@
    <bottom>
       <HBox prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="51.0" text="Mode:" />
-            <Label maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="25.0" text="PvP" />
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="51.0" text="Mode:" textAlignment="CENTER" />
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="25.0" text="PvP" textAlignment="CENTER" />
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="59.0" text="Turns:" textAlignment="CENTER" />
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="25.0" text="0" textAlignment="CENTER" />
          </children>
       </HBox>
    </bottom>
